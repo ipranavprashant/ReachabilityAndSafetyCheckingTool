@@ -1,0 +1,32 @@
+# agent information
+
+outside: 1, approach: 1, tunnel: 1, collision: 0
+
+a1, a2
+
+outside: a1,a2
+approach: a1,a2
+
+outside,a1,b,a1,collision
+outside,a2,b,a2,tunnel
+
+outside
+tunnel
+
+# environment information
+
+green, yellow, red
+
+b
+
+green: b
+yellow: b
+red: b
+
+green
+
+green,b,a1,yellow
+green,b,a2,red
+yellow,b,a2,red
+red,b,a1,yellow
+

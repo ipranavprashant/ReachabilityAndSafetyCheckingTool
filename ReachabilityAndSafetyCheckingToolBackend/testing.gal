@@ -1,0 +1,162 @@
+gal testing {
+    int l0 = 0;
+    int l1 = 0;
+    int l2 = 0;
+    int l3 = 0;
+    int le0 = 1;
+    int le1 = 0;
+    int le2 = 0;
+    int count = 0;
+
+    transition initialTrans [count < 50] {
+        l0 += 1; count += 1;
+    }
+
+    transition leaveTrans [l2 > 0] {
+        l2 -= 1; count -= 1;
+    }
+
+    transition t1 [le0 >= 1 && l0 >= 1] {
+        le0 -= 1; l0 -= 1; le1 += 1; l1 += 1;
+    }
+
+    transition t2 [le0 >= 1 && l1 >= 1] {
+        le0 -= 1; l1 -= 1; le1 += 1; l0 += 1;
+    }
+
+    transition t3 [le0 >= 1 && l1 >= 1] {
+        le0 -= 1; l1 -= 1; le1 += 1; l3 += 1;
+    }
+
+    transition t4 [le0 >= 1 && l0 >= 2] {
+        le0 -= 1; l0 -= 2; le1 += 1; l1 += 2;
+    }
+
+    transition t5 [le0 >= 1 && l0 >= 1 && l1 >= 1] {
+        le0 -= 1; l0 -= 1; l1 -= 1; le1 += 1; l1 += 1; l0 += 1;
+    }
+
+    transition t6 [le0 >= 1 && l0 >= 2] {
+        le0 -= 1; l0 -= 2; le1 += 1; l1 += 1; l3 += 1;
+    }
+
+    transition t7 [le0 >= 1 && l1 >= 1 && l0 >= 1] {
+        le0 -= 1; l1 -= 1; l0 -= 1; le1 += 1; l0 += 1; l1 += 1;
+    }
+
+    transition t8 [le0 >= 1 && l1 >= 2] {
+        le0 -= 1; l1 -= 2; le1 += 1; l0 += 2;
+    }
+
+    transition t9 [le0 >= 1 && l1 >= 1 && l0 >= 1] {
+        le0 -= 1; l1 -= 1; l0 -= 1; le1 += 1; l0 += 1; l3 += 1;
+    }
+
+    transition t10 [le0 >= 1 && l0 >= 2] {
+        le0 -= 1; l0 -= 2; le1 += 1; l3 += 1; l1 += 1;
+    }
+
+    transition t11 [le0 >= 1 && l0 >= 1 && l1 >= 1] {
+        le0 -= 1; l0 -= 1; l1 -= 1; le1 += 1; l3 += 1; l0 += 1;
+    }
+
+    transition t12 [le0 >= 1 && l0 >= 2] {
+        le0 -= 1; l0 -= 2; le1 += 1; l3 += 2;
+    }
+
+    transition t13 [le0 >= 1 && l0 >= 1] {
+        le0 -= 1; l0 -= 1; le2 += 1; l2 += 1;
+    }
+
+    transition t14 [le0 >= 1 && l1 >= 1] {
+        le0 -= 1; l1 -= 1; le2 += 1; l2 += 1;
+    }
+
+    transition t15 [le0 >= 1 && l0 >= 2] {
+        le0 -= 1; l0 -= 2; le2 += 1; l2 += 2;
+    }
+
+    transition t16 [le0 >= 1 && l0 >= 1 && l1 >= 1] {
+        le0 -= 1; l0 -= 1; l1 -= 1; le2 += 1; l2 += 2;
+    }
+
+    transition t17 [le0 >= 1 && l1 >= 1 && l0 >= 1] {
+        le0 -= 1; l1 -= 1; l0 -= 1; le2 += 1; l2 += 2;
+    }
+
+    transition t18 [le0 >= 1 && l1 >= 2] {
+        le0 -= 1; l1 -= 2; le2 += 1; l2 += 2;
+    }
+
+    transition t19 [le2 >= 1 && l0 >= 1] {
+        le2 -= 1; l0 -= 1; le1 += 1; l1 += 1;
+    }
+
+    transition t20 [le2 >= 1 && l1 >= 1] {
+        le2 -= 1; l1 -= 1; le1 += 1; l0 += 1;
+    }
+
+    transition t21 [le2 >= 1 && l1 >= 1] {
+        le2 -= 1; l1 -= 1; le1 += 1; l3 += 1;
+    }
+
+    transition t22 [le2 >= 1 && l0 >= 2] {
+        le2 -= 1; l0 -= 2; le1 += 1; l1 += 2;
+    }
+
+    transition t23 [le2 >= 1 && l0 >= 1 && l1 >= 1] {
+        le2 -= 1; l0 -= 1; l1 -= 1; le1 += 1; l1 += 1; l0 += 1;
+    }
+
+    transition t24 [le2 >= 1 && l0 >= 2] {
+        le2 -= 1; l0 -= 2; le1 += 1; l1 += 1; l3 += 1;
+    }
+
+    transition t25 [le2 >= 1 && l1 >= 1 && l0 >= 1] {
+        le2 -= 1; l1 -= 1; l0 -= 1; le1 += 1; l0 += 1; l1 += 1;
+    }
+
+    transition t26 [le2 >= 1 && l1 >= 2] {
+        le2 -= 1; l1 -= 2; le1 += 1; l0 += 2;
+    }
+
+    transition t27 [le2 >= 1 && l1 >= 1 && l0 >= 1] {
+        le2 -= 1; l1 -= 1; l0 -= 1; le1 += 1; l0 += 1; l3 += 1;
+    }
+
+    transition t28 [le2 >= 1 && l0 >= 2] {
+        le2 -= 1; l0 -= 2; le1 += 1; l3 += 1; l1 += 1;
+    }
+
+    transition t29 [le2 >= 1 && l0 >= 1 && l1 >= 1] {
+        le2 -= 1; l0 -= 1; l1 -= 1; le1 += 1; l3 += 1; l0 += 1;
+    }
+
+    transition t30 [le2 >= 1 && l0 >= 2] {
+        le2 -= 1; l0 -= 2; le1 += 1; l3 += 2;
+    }
+
+    transition t31 [le1 >= 1 && l0 >= 1] {
+        le1 -= 1; l0 -= 1; le2 += 1; l2 += 1;
+    }
+
+    transition t32 [le1 >= 1 && l1 >= 1] {
+        le1 -= 1; l1 -= 1; le2 += 1; l2 += 1;
+    }
+
+    transition t33 [le1 >= 1 && l0 >= 2] {
+        le1 -= 1; l0 -= 2; le2 += 1; l2 += 2;
+    }
+
+    transition t34 [le1 >= 1 && l0 >= 1 && l1 >= 1] {
+        le1 -= 1; l0 -= 1; l1 -= 1; le2 += 1; l2 += 2;
+    }
+
+    transition t35 [le1 >= 1 && l1 >= 1 && l0 >= 1] {
+        le1 -= 1; l1 -= 1; l0 -= 1; le2 += 1; l2 += 2;
+    }
+
+    transition t36 [le1 >= 1 && l1 >= 2] {
+        le1 -= 1; l1 -= 2; le2 += 1; l2 += 2;
+    }
+}

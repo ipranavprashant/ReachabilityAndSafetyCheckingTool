@@ -1,0 +1,42 @@
+# agent information
+
+outside: 1, approach: 1, tunnel: 1, collision: 0
+
+a1, a2
+
+outside: a1,a2
+
+# Agent Transitions:
+# Safe transitions:
+outside,a1,b,a1,approach
+approach,a1,b,a1,tunnel
+tunnel,a1,b,a1,tunnel
+
+outside,a2,b,a2,approach
+approach,a2,b,a2,tunnel
+tunnel,a2,b,a2,tunnel
+
+# Unsafe transitions (defined but unreachable because "collision" has capacity 0):
+outside,a1,b,a1,collision
+approach,a1,b,a1,collision
+outside,a2,b,a2,collision
+approach,a2,b,a2,collision
+
+# Expected final safe states (each agent ends in tunnel):
+tunnel
+tunnel
+
+# environment information
+
+green, yellow, red
+
+bp
+
+green: b
+yellow: b
+red: b
+
+green
+
+green,b,a1,green
+green,b,a2,green
